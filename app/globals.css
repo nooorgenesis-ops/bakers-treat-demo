@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-black: #080909;
+  --color-yellow: #FFE500;
+  --color-cream: #FFF9E8;
+  --color-beige: #F4E8C9;
+  --color-charcoal: #242424;
+  --color-white: #FFFFFF;
+}
+
+/* Custom smooth scrolling and baseline styles */
+html {
+  background-color: #080909;
+  color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #080909;
+}
+
+/* Custom elegant scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080909;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #242424;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFE500;
+}
+
+/* Hide scrollbar for horizontal category pills while keeping functionality */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Reduced motion preference respect */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Subtle luxury glow effect utility */
+.glow-on-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glow-on-hover:hover {
+  box-shadow: 0 0 20px rgba(255, 229, 0, 0.28);
+}
+
+/* Editorial line clamped styles */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Fade-in animation for accordion and micro-interactions */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out both;
+}
