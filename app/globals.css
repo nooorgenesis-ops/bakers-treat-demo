@@ -11,6 +11,11 @@
   --color-white: #FFFFFF;
 }
 
+/* Universal box-sizing and reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /* Custom smooth scrolling and baseline styles */
 html {
   background-color: #080909;
@@ -22,6 +27,12 @@ html {
 body {
   overflow-x: hidden;
   background-color: #080909;
+  color: #FFFFFF;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 /* Custom elegant scrollbar */
@@ -83,4 +94,12 @@ body {
 }
 .animate-fadeIn {
   animation: fadeIn 0.2s ease-out both;
+}
+
+/* Restrained 3D perspective utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
 }

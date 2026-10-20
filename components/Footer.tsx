@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Instagram, Phone, MapPin, ArrowUp } from "lucide-react";
 import { businessConfig } from "@/data/config";
 import { WhatsAppButton } from "./WhatsAppButton";
@@ -13,12 +14,18 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-brand-black text-neutral-400 border-t border-white/10 pt-16 pb-24 lg:pb-16">
+    <footer className="bg-brand-black text-neutral-400 border-t border-white/10 pt-14 sm:pt-16 pb-24 lg:pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-white/10">
-          {/* Col 1: Brand & Logo (Exact Asset) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-10 sm:pb-12 border-b border-white/10"
+        >
+          {/* Col 1: Brand & Logo */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="relative w-48 h-14">
+            <div className="relative w-44 sm:w-48 h-12 sm:h-14">
               <Image
                 src="/logo/sr-bakers-treat-logo.png"
                 alt="SR Baker’s Treat Café Logo"
@@ -53,7 +60,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link href="/menu" className="hover:text-brand-yellow font-semibold text-white transition-colors">
-                  Full Menu & Categories
+                  Full Menu &amp; Categories
                 </Link>
               </li>
               <li>
@@ -68,7 +75,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link href="/#contact" className="hover:text-brand-yellow transition-colors">
-                  Contact & Location
+                  Contact &amp; Location
                 </Link>
               </li>
             </ul>
@@ -77,7 +84,7 @@ export const Footer: React.FC = () => {
           {/* Col 3: Contact Summary */}
           <div className="lg:col-span-4 space-y-3">
             <h4 className="text-xs font-semibold text-white uppercase tracking-wider">
-              Contact & Social
+              Contact &amp; Social
             </h4>
             <div className="space-y-2.5 text-xs sm:text-sm">
               <div className="flex items-start gap-2.5">
@@ -107,10 +114,10 @@ export const Footer: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
+        <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
           <div>
             © {new Date().getFullYear()} {businessConfig.brandName}. All rights reserved. Demo presentation concept.
           </div>
@@ -118,8 +125,9 @@ export const Footer: React.FC = () => {
           <div className="flex items-center gap-6">
             <span>Panemangalore, Karnataka</span>
             <button
+              type="button"
               onClick={scrollToTop}
-              className="inline-flex items-center gap-1.5 text-neutral-400 hover:text-white transition-colors focus:outline-none"
+              className="inline-flex items-center gap-1.5 text-neutral-400 hover:text-white transition-colors focus:outline-none active:scale-95"
               aria-label="Back to top"
             >
               <span>Back to top</span>

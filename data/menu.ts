@@ -88,14 +88,14 @@ export const menuCategories: CategoryInfo[] = [
     id: "Fries & Sides",
     name: "Fries & Sides",
     description: "Golden crispy sides seasoned with peri-peri, loaded cheese & aromatic herbs.",
-    image: "/images/category-burgers.webp",
+    image: "/images/category-fries.webp",
     imageAlt: "Crispy golden seasoned fries with creamy dipping sauces",
   },
   {
     id: "Pasta",
     name: "Pasta",
     description: "Creamy Alfredo, spicy Arrabbiata & hearty pasta preparations with dual variant pricing.",
-    image: "/images/category-momos.webp",
+    image: "/images/category-pasta.webp",
     imageAlt: "Rich creamy Italian pasta garnished with fresh herbs and parmesan",
   },
   {
